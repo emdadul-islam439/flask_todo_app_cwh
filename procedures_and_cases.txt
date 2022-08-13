@@ -81,3 +81,8 @@
     -> go to: https://getbootstrap.com/docs/4.4/getting-started/introduction/
     -> copy the 'starter code' and paste in the 'already cleared' index.html
     -> save the file and go to "127.0.0.1:8000" and can be seen the output "Hello World!"
+
+    -> add 'navbar':
+        - from 'components-> navbar' section copy the code
+        - select the <h1> Hello World! </h1> and paste the code 
+        - save and go to the default link, and see the output 
