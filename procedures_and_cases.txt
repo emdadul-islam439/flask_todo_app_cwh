@@ -76,3 +76,8 @@
         - from the "hello_world()" function return the template-file
             * return render_template("index.html")
         - now go to "127.0.0.1:8000/" link and see the output of the HTML file
+
+## Beautify the app from BOOTSTRAP:
+    -> go to: https://getbootstrap.com/docs/4.4/getting-started/introduction/
+    -> copy the 'starter code' and paste in the 'already cleared' index.html
+    -> save the file and go to "127.0.0.1:8000" and can be seen the output "Hello World!"
