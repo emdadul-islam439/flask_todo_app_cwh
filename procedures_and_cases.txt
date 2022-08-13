@@ -49,3 +49,11 @@
             * app.run(debug=True, port = 800)
             - press CTRL+C and agin run the app
             - app will run in the "127.0.0.1:8000" link
+
+## adding second route:
+    -> just add "@app.route(...)" 
+        * "@app.route("/second-route")"
+    -> and create function "def second_route():...."
+        * def second_route():
+        *   return "second page"
+    -> 'save' and go to "127.0.0.1:8000/second-route", That's it!
