@@ -155,3 +155,16 @@
 
           -"jinja" will be use the code to generate all the table-rows for the DB 
 
+## Saving form-data into DB (POST API):
+    -> add 'action' and 'method' into the form 
+        * <form action = "/" method="POST">
+    -> in the @app.route(...) add 'methods'
+        * @app.route("/", methods = ["GET", "POST"])
+    -> get the 'title' and 'desc' from the form
+        * todo = Todo(title = request.form['title'], desc = request.form['desc'])
+        - to get the data using form['title'] and form['desc'], use "name=...":
+            * "<input ..... nmae="title" ....>"
+            * "<input ..... name="desc" .....>"
+    -> save the title, description. That's it!
+
+
