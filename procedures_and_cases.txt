@@ -20,6 +20,17 @@
         * flask
 
 
+
+
+
+------------------------------------ tasks/steps --------------------------------------
+
+## install flask 
+    - add 'flask' in requirements.txt and save
+    - write 'pip install -r requiremnts.txt' command, press enter
+    - that's it!
+
+
 ## work with first 'minimal app'
     -> create a file named-> "app.py" in the root directory
     -> write code
@@ -30,21 +41,11 @@
         *   return "hello world"
     -> run app
         * if __name__ = "__main__":
-        *   app.run(debug=True
+        *   app.run(debug=True)
         - in the terminal write-> "python ./app.py"
         - open app into browser
             * 'press CTRL' and 'click' in the "127.0.0.1:5000" link
-
-
-
-
-
-
-
-
------------------------------------- tasks/steps --------------------------------------
-
-## install flask 
-    - add 'flask' in requirements.txt and save
-    - write 'pip install -r requiremnts.txt' command, press enter
-    - that's it!
+        - to change the 'port no.', change the line:
+            * app.run(debug=True, port = 800)
+            - press CTRL+C and agin run the app
+            - app will run in the "127.0.0.1:8000" link
