@@ -8,3 +8,13 @@
     -> activate virtual Environment
         * "source virtualEnv/bin/activate"
 
+## add .gitignore file
+    -> add different files/folder
+        * __pycache__
+        * virtualEnv
+        * .DS_Store
+
+## Create requirements.txt file
+    -> if install any module/library using 'pip install', insert it's name
+        * sqlalchemy
+        * flask
