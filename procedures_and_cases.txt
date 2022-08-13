@@ -18,3 +18,18 @@
     -> if install any module/library using 'pip install', insert it's name
         * sqlalchemy
         * flask
+
+
+
+
+
+
+
+
+
+------------------------------------ tasks/steps --------------------------------------
+
+## install flask 
+    - add 'flask' in requirements.txt and save
+    - write 'pip install -r requiremnts.txt' command, press enter
+    - that's it!
