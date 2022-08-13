@@ -2,3 +2,4 @@ flask
 flask-sqlalchemy
 gunicorn
 jinja2
+uvicorn
