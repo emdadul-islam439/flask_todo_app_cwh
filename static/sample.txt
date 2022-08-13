@@ -1,0 +1,2 @@
+this is a sample static .txt file 
+you can add audio/video or other type of files in this folder

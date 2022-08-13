@@ -57,3 +57,22 @@
         * def second_route():
         *   return "second page"
     -> 'save' and go to "127.0.0.1:8000/second-route", That's it!
+
+## adding 'static' files
+    -> create a folder 'static' in the project's root directory
+    -> audio/video/cfg/txt or any other files can be saved into this folder
+    -> files can be accessed from "/static/<file-name>.<extension>"
+        - create a file named 'sample.txt', add some text into it (for not being an empty file)
+        - add it into 'static' folder
+        - go to "127.0.0.1:8000/static/sample.txt" link, and it will open the file in the browser 
+
+## adding 'templates' files
+    -> create a folder 'templates' (yes, an 's' as the last character)
+    -> project's functionality related folders generally stay into this folder
+    -> files can be accessed with the API's 'end-points'
+        - create a file named 'index.html' and add some html-writings
+        - add it into 'templates' folder
+        - import 'render_template' into the app.py file
+        - from the "hello_world()" function return the template-file
+            * return render_template("index.html")
+        - now go to "127.0.0.1:8000/" link and see the output of the HTML file
