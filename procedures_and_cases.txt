@@ -97,3 +97,26 @@
         - from 'Content->Tables" section copy the table code
         - make a div.component section and paste the code inside it 
 
+
+## Create DB 
+    -> import 'flask-sqlalchemy' via requirements.txt
+    -> setup the DB-> 
+        * app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
+        * app.config['SQLALCHEMY_TRACK_MODIFICATIsONS'] = False
+        * db = SQLAlchemy(app)
+    -> Create DB model-class (data class)
+        * class Todo(db.Model)
+        - define all the columns
+            * sl_no = db.Column(db.Integer, primary_key = True)
+            * title = db.Column(db.String(200), nullable = False)
+            * desc = db.Column(db.String(500), nullable = False)
+            * date_created = db.Column(db.DateTime, default = datetime.utcnow)
+        - write the '__repr__' function to printing our-wanted fields
+            * def __repr__(self) -> str:
+                return print(f"{self.sl_no}- {self.title}")
+    -> making the actual file 
+        - start python-interpreter by writing 'python' in the terminal
+        - write the fillowing:
+            * from app import db
+            * db.create_all()
+        - the 'todo.db' file will be created into the project's root directory 
