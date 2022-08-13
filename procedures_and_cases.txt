@@ -20,6 +20,21 @@
         * flask
 
 
+## work with first 'minimal app'
+    -> create a file named-> "app.py" in the root directory
+    -> write code
+        * from flask import Flask
+        * app = Flask(__name__)
+        * @app.route("/")
+        * def hello_world():
+        *   return "hello world"
+    -> run app
+        * if __name__ = "__main__":
+        *   app.run(debug=True
+        - in the terminal write-> "python ./app.py"
+        - open app into browser
+            * 'press CTRL' and 'click' in the "127.0.0.1:5000" link
+
 
 
 
