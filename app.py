@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from crypt import methods
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -19,7 +20,7 @@ class Todo(db.Model):
 
 @app.route("/", methods = ["GET", "POST"])
 def hello_world():
-    if request.method == "POST":
+    if request.method == "POST" and request.form['title'] and request.form['desc']:
         todo = Todo(title = request.form['title'], desc = request.form['desc'])
         db.session.add(todo)
         db.session.commit()
@@ -34,6 +35,20 @@ def show():
     allTodo = Todo.query.all()
     print(allTodo)
     return "this is the second page"
+
+
+@app.route("/update/<int:sl_no>", methods = ["PUT"])
+def update(sl_no):
+    allTodo = Todo.query.all()
+    print(allTodo)
+    return "this is the second page"
+
+@app.route("/delete/<int:sl_no>")
+def delete(sl_no):
+    todo = Todo.query.filter_by(sl_no = sl_no).first()
+    db.session.delete(todo)
+    db.session.commit()
+    return redirect("/")
 
 
 if __name__ == "__main__":
