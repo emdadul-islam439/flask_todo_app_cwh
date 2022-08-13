@@ -1,0 +1,10 @@
+## Enable Virutal Environment
+    -> go to 'project's' root folder
+        * "cd 01_flask_to_do_cwh"
+    -> install vicrutal Environment
+        * "pip install virtualenv"
+    -> create virtual Environment
+        * "python3 -m venv virtualEnv"
+    -> activate virtual Environment
+        * "source virtualEnv/bin/activate"
+
