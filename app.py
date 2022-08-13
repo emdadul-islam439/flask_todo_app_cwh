@@ -1,4 +1,3 @@
-from curses.ascii import NUL
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -15,16 +14,24 @@ class Todo(db.Model):
     date_created = db.Column(db.DateTime, default = datetime.utcnow)
 
     def __repr__(self) -> str:
-        return print(f"{self.sl_no}- {self.title}")
+        return f"{self.sl_no}- {self.title}"
 
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html")
+    todo = Todo(title = "My first title", desc = "My first description")
+    db.session.add(todo)
+    db.session.commit()
+
+    allTodo = Todo.query.all()
+    print(allTodo)
+    return render_template("index.html", allTodo = allTodo)
 
 
-@app.route("/second-route")
-def second_route():
+@app.route("/show")
+def show():
+    allTodo = Todo.query.all()
+    print(allTodo)
     return "this is the second page"
 
 

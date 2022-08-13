@@ -113,10 +113,45 @@
             * date_created = db.Column(db.DateTime, default = datetime.utcnow)
         - write the '__repr__' function to printing our-wanted fields
             * def __repr__(self) -> str:
-                return print(f"{self.sl_no}- {self.title}")
+                #return print(f"{self.sl_no}- {self.title}")
+                update: return f"{self.sl_no}- {self.title}"
     -> making the actual file 
         - start python-interpreter by writing 'python' in the terminal
         - write the fillowing:
             * from app import db
             * db.create_all()
         - the 'todo.db' file will be created into the project's root directory 
+
+
+## Testing the DB
+    -> create an object of Todo class and save it to DB
+        - in the index() function write those lines
+            * todo = Todo(title = "My first title", desc = "My first description")
+            * db.session.add(todo)
+            * db.session.commit()
+        - reload the default rout ("/"), 
+        - the 'title' and 'desc' will enter multiple times if you reload the page into the browser
+    -> in the show() function print the whole DB
+        - write those lines:
+            * allTodo = Todo.query.all()
+            * print(allTodo)
+        - reload the "/show" route's page in the browser, item of the whole DB will be shown in the terminal
+
+
+## Showing items into FRONT-END:
+    -> install 'jinja2' extension for vsCode.
+        - search "jinja2 snippet kit" and install it
+    -> in the "table" section, modify the code like this:
+        * <tbody>
+            {% for todo in allTodo %}
+                <tr>
+                    <th scope="row">{{loop.index}} </th>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.desc}}</td>
+                    <td>{{todo.date_created}}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+
+          -"jinja" will be use the code to generate all the table-rows for the DB 
+
