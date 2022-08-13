@@ -86,3 +86,14 @@
         - from 'components-> navbar' section copy the code
         - select the <h1> Hello World! </h1> and paste the code 
         - save and go to the default link, and see the output 
+        - UPDATE: write "div.component" and press ENTER, and you will get: "<div class="components"></div> 
+            - paste the 'navbar' section into this <div> section
+    
+    -> add 'login form':
+        - from 'components->forms' copy  the 'login from' code
+        - make a div.component section and paste the 'login form' code inside it
+    
+    -> add 'todo table':
+        - from 'Content->Tables" section copy the table code
+        - make a div.component section and paste the code inside it 
+
