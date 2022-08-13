@@ -8,11 +8,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-@app.route("/")
-def hello_world():
-    return render_template("index.html")
-
-
 class Todo(db.Model):
     sl_no = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(200), nullable = False)
@@ -21,6 +16,11 @@ class Todo(db.Model):
 
     def __repr__(self) -> str:
         return print(f"{self.sl_no}- {self.title}")
+
+
+@app.route("/")
+def hello_world():
+    return render_template("index.html")
 
 
 @app.route("/second-route")
